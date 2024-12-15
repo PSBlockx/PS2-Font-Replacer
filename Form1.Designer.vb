@@ -30,6 +30,10 @@ Partial Class Form1
         Me.BackgroundWorker1 = New System.ComponentModel.BackgroundWorker()
         Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel()
         Me.FlowLayoutPanel2 = New System.Windows.Forms.FlowLayoutPanel()
+        Me.FlowLayoutPanel6 = New System.Windows.Forms.FlowLayoutPanel()
+        Me.fontAutoCheck = New System.Windows.Forms.CheckBox()
+        Me.fontSelectButton = New System.Windows.Forms.Button()
+        Me.selectedFontPath = New System.Windows.Forms.Label()
         Me.FlowLayoutPanel5 = New System.Windows.Forms.FlowLayoutPanel()
         Me.fontAutoCheck2 = New System.Windows.Forms.CheckBox()
         Me.fontSelectButton2 = New System.Windows.Forms.Button()
@@ -43,17 +47,13 @@ Partial Class Form1
         Me.FlowLayoutPanel4 = New System.Windows.Forms.FlowLayoutPanel()
         Me.commandAutoCheck = New System.Windows.Forms.CheckBox()
         Me.commandTextBox = New System.Windows.Forms.TextBox()
-        Me.FlowLayoutPanel6 = New System.Windows.Forms.FlowLayoutPanel()
-        Me.fontAutoCheck = New System.Windows.Forms.CheckBox()
-        Me.fontSelectButton = New System.Windows.Forms.Button()
-        Me.selectedFontPath = New System.Windows.Forms.Label()
         Me.StatusStrip1.SuspendLayout()
         Me.FlowLayoutPanel1.SuspendLayout()
         Me.FlowLayoutPanel2.SuspendLayout()
+        Me.FlowLayoutPanel6.SuspendLayout()
         Me.FlowLayoutPanel5.SuspendLayout()
         Me.FlowLayoutPanel3.SuspendLayout()
         Me.FlowLayoutPanel4.SuspendLayout()
-        Me.FlowLayoutPanel6.SuspendLayout()
         Me.SuspendLayout()
         '
         'ToolStripStatusLabel1
@@ -127,6 +127,53 @@ Partial Class Form1
         Me.FlowLayoutPanel2.Size = New System.Drawing.Size(127, 150)
         Me.FlowLayoutPanel2.TabIndex = 74
         '
+        'FlowLayoutPanel6
+        '
+        Me.FlowLayoutPanel6.AutoSize = True
+        Me.FlowLayoutPanel6.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.FlowLayoutPanel6.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.FlowLayoutPanel6.Controls.Add(Me.fontAutoCheck)
+        Me.FlowLayoutPanel6.Controls.Add(Me.fontSelectButton)
+        Me.FlowLayoutPanel6.Controls.Add(Me.selectedFontPath)
+        Me.FlowLayoutPanel6.FlowDirection = System.Windows.Forms.FlowDirection.TopDown
+        Me.FlowLayoutPanel6.Location = New System.Drawing.Point(3, 3)
+        Me.FlowLayoutPanel6.Name = "FlowLayoutPanel6"
+        Me.FlowLayoutPanel6.Size = New System.Drawing.Size(96, 69)
+        Me.FlowLayoutPanel6.TabIndex = 77
+        '
+        'fontAutoCheck
+        '
+        Me.fontAutoCheck.AutoSize = True
+        Me.fontAutoCheck.ForeColor = System.Drawing.SystemColors.Control
+        Me.fontAutoCheck.Location = New System.Drawing.Point(3, 3)
+        Me.fontAutoCheck.Name = "fontAutoCheck"
+        Me.fontAutoCheck.Size = New System.Drawing.Size(90, 17)
+        Me.fontAutoCheck.TabIndex = 2
+        Me.fontAutoCheck.Text = "Replace Font"
+        Me.fontAutoCheck.UseVisualStyleBackColor = True
+        '
+        'fontSelectButton
+        '
+        Me.fontSelectButton.Location = New System.Drawing.Point(3, 26)
+        Me.fontSelectButton.Name = "fontSelectButton"
+        Me.fontSelectButton.Size = New System.Drawing.Size(75, 23)
+        Me.fontSelectButton.TabIndex = 3
+        Me.fontSelectButton.Text = "Select Font"
+        Me.fontSelectButton.UseVisualStyleBackColor = True
+        Me.fontSelectButton.Visible = False
+        '
+        'selectedFontPath
+        '
+        Me.selectedFontPath.AutoSize = True
+        Me.selectedFontPath.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.selectedFontPath.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.selectedFontPath.ForeColor = System.Drawing.SystemColors.Control
+        Me.selectedFontPath.Location = New System.Drawing.Point(3, 52)
+        Me.selectedFontPath.Name = "selectedFontPath"
+        Me.selectedFontPath.Size = New System.Drawing.Size(0, 17)
+        Me.selectedFontPath.TabIndex = 63
+        Me.selectedFontPath.Visible = False
+        '
         'FlowLayoutPanel5
         '
         Me.FlowLayoutPanel5.AutoSize = True
@@ -148,7 +195,7 @@ Partial Class Form1
         Me.fontAutoCheck2.Location = New System.Drawing.Point(3, 3)
         Me.fontAutoCheck2.Name = "fontAutoCheck2"
         Me.fontAutoCheck2.Size = New System.Drawing.Size(115, 17)
-        Me.fontAutoCheck2.TabIndex = 3
+        Me.fontAutoCheck2.TabIndex = 4
         Me.fontAutoCheck2.Text = "Replace Chat Font"
         Me.fontAutoCheck2.UseVisualStyleBackColor = True
         '
@@ -157,7 +204,7 @@ Partial Class Form1
         Me.fontSelectButton2.Location = New System.Drawing.Point(3, 26)
         Me.fontSelectButton2.Name = "fontSelectButton2"
         Me.fontSelectButton2.Size = New System.Drawing.Size(75, 23)
-        Me.fontSelectButton2.TabIndex = 73
+        Me.fontSelectButton2.TabIndex = 5
         Me.fontSelectButton2.Text = "Select Font"
         Me.fontSelectButton2.UseVisualStyleBackColor = True
         Me.fontSelectButton2.Visible = False
@@ -189,6 +236,7 @@ Partial Class Form1
         Me.FlowLayoutPanel3.Name = "FlowLayoutPanel3"
         Me.FlowLayoutPanel3.Size = New System.Drawing.Size(172, 115)
         Me.FlowLayoutPanel3.TabIndex = 75
+        Me.FlowLayoutPanel3.Visible = False
         '
         'localeReplaceCheck
         '
@@ -197,7 +245,7 @@ Partial Class Form1
         Me.localeReplaceCheck.Location = New System.Drawing.Point(3, 3)
         Me.localeReplaceCheck.Name = "localeReplaceCheck"
         Me.localeReplaceCheck.Size = New System.Drawing.Size(166, 17)
-        Me.localeReplaceCheck.TabIndex = 5
+        Me.localeReplaceCheck.TabIndex = 6
         Me.localeReplaceCheck.Text = "Automatically Replace Locale"
         Me.localeReplaceCheck.UseVisualStyleBackColor = True
         '
@@ -206,7 +254,7 @@ Partial Class Form1
         Me.localeDirButton.Location = New System.Drawing.Point(3, 26)
         Me.localeDirButton.Name = "localeDirButton"
         Me.localeDirButton.Size = New System.Drawing.Size(75, 23)
-        Me.localeDirButton.TabIndex = 6
+        Me.localeDirButton.TabIndex = 7
         Me.localeDirButton.Text = "Select Dir"
         Me.localeDirButton.UseVisualStyleBackColor = True
         Me.localeDirButton.Visible = False
@@ -228,7 +276,7 @@ Partial Class Form1
         Me.localeDatButton.Location = New System.Drawing.Point(3, 72)
         Me.localeDatButton.Name = "localeDatButton"
         Me.localeDatButton.Size = New System.Drawing.Size(75, 23)
-        Me.localeDatButton.TabIndex = 7
+        Me.localeDatButton.TabIndex = 8
         Me.localeDatButton.Text = "Select Dat"
         Me.localeDatButton.UseVisualStyleBackColor = True
         Me.localeDatButton.Visible = False
@@ -257,6 +305,7 @@ Partial Class Form1
         Me.FlowLayoutPanel4.Name = "FlowLayoutPanel4"
         Me.FlowLayoutPanel4.Size = New System.Drawing.Size(250, 147)
         Me.FlowLayoutPanel4.TabIndex = 76
+        Me.FlowLayoutPanel4.Visible = False
         '
         'commandAutoCheck
         '
@@ -265,7 +314,7 @@ Partial Class Form1
         Me.commandAutoCheck.Location = New System.Drawing.Point(3, 3)
         Me.commandAutoCheck.Name = "commandAutoCheck"
         Me.commandAutoCheck.Size = New System.Drawing.Size(216, 17)
-        Me.commandAutoCheck.TabIndex = 8
+        Me.commandAutoCheck.TabIndex = 9
         Me.commandAutoCheck.Text = "Automatically Replace Command Queue"
         Me.commandAutoCheck.UseVisualStyleBackColor = True
         '
@@ -278,55 +327,8 @@ Partial Class Form1
         Me.commandTextBox.Name = "commandTextBox"
         Me.commandTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Both
         Me.commandTextBox.Size = New System.Drawing.Size(244, 118)
-        Me.commandTextBox.TabIndex = 9
+        Me.commandTextBox.TabIndex = 10
         Me.commandTextBox.Visible = False
-        '
-        'FlowLayoutPanel6
-        '
-        Me.FlowLayoutPanel6.AutoSize = True
-        Me.FlowLayoutPanel6.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.FlowLayoutPanel6.BackColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.FlowLayoutPanel6.Controls.Add(Me.fontAutoCheck)
-        Me.FlowLayoutPanel6.Controls.Add(Me.fontSelectButton)
-        Me.FlowLayoutPanel6.Controls.Add(Me.selectedFontPath)
-        Me.FlowLayoutPanel6.FlowDirection = System.Windows.Forms.FlowDirection.TopDown
-        Me.FlowLayoutPanel6.Location = New System.Drawing.Point(3, 3)
-        Me.FlowLayoutPanel6.Name = "FlowLayoutPanel6"
-        Me.FlowLayoutPanel6.Size = New System.Drawing.Size(96, 69)
-        Me.FlowLayoutPanel6.TabIndex = 77
-        '
-        'fontAutoCheck
-        '
-        Me.fontAutoCheck.AutoSize = True
-        Me.fontAutoCheck.ForeColor = System.Drawing.SystemColors.Control
-        Me.fontAutoCheck.Location = New System.Drawing.Point(3, 3)
-        Me.fontAutoCheck.Name = "fontAutoCheck"
-        Me.fontAutoCheck.Size = New System.Drawing.Size(90, 17)
-        Me.fontAutoCheck.TabIndex = 2
-        Me.fontAutoCheck.Text = "Replace Font"
-        Me.fontAutoCheck.UseVisualStyleBackColor = True
-        '
-        'fontSelectButton
-        '
-        Me.fontSelectButton.Location = New System.Drawing.Point(3, 26)
-        Me.fontSelectButton.Name = "fontSelectButton"
-        Me.fontSelectButton.Size = New System.Drawing.Size(75, 23)
-        Me.fontSelectButton.TabIndex = 4
-        Me.fontSelectButton.Text = "Select Font"
-        Me.fontSelectButton.UseVisualStyleBackColor = True
-        Me.fontSelectButton.Visible = False
-        '
-        'selectedFontPath
-        '
-        Me.selectedFontPath.AutoSize = True
-        Me.selectedFontPath.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.selectedFontPath.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.selectedFontPath.ForeColor = System.Drawing.SystemColors.Control
-        Me.selectedFontPath.Location = New System.Drawing.Point(3, 52)
-        Me.selectedFontPath.Name = "selectedFontPath"
-        Me.selectedFontPath.Size = New System.Drawing.Size(0, 17)
-        Me.selectedFontPath.TabIndex = 63
-        Me.selectedFontPath.Visible = False
         '
         'Form1
         '
@@ -351,14 +353,14 @@ Partial Class Form1
         Me.FlowLayoutPanel1.PerformLayout()
         Me.FlowLayoutPanel2.ResumeLayout(False)
         Me.FlowLayoutPanel2.PerformLayout()
+        Me.FlowLayoutPanel6.ResumeLayout(False)
+        Me.FlowLayoutPanel6.PerformLayout()
         Me.FlowLayoutPanel5.ResumeLayout(False)
         Me.FlowLayoutPanel5.PerformLayout()
         Me.FlowLayoutPanel3.ResumeLayout(False)
         Me.FlowLayoutPanel3.PerformLayout()
         Me.FlowLayoutPanel4.ResumeLayout(False)
         Me.FlowLayoutPanel4.PerformLayout()
-        Me.FlowLayoutPanel6.ResumeLayout(False)
-        Me.FlowLayoutPanel6.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
