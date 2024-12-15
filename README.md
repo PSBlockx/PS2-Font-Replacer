@@ -19,7 +19,7 @@ Replacing these files still technically violates the game's file manifest, and a
 As such, *not* using a script or other program to make these changes necessitates that the user manually copy and overwrite the desired files on each game launch.
 
 ## How work?
-Upon first use this program makes its own config file to note down te file paths for the user's desired replacement fonts (iniEdit.ini).
+Upon first use this program makes its own config file to note down the file paths for the user's desired replacement fonts (iniEdit.ini).
 When Planetside 2 starts (after clicking play on the launcher), and because it uses BE, Windows' Event Log logs a service start/install (Event ID 7045) for BEDaisy.
 Assuming the PC is not using a very slow, spinning-disk hard drive, there is enough time to catch this event and replace the normal font files before the game actually starts.
 After catching said event, this program does this copy/replace operation, then closes itself.
