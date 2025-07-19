@@ -6,7 +6,7 @@ A program that allows users to (somewhat) automatically replace their game font 
 1. Download program
 2. Move to primary game folder (the one with Launchpad.exe and Planetside2_x64.exe)
 3. Start at same time as game launcher
-4. Configure with desired font (USE .TTF ONLY)
+4. Configure with desired font (USE .TTF font files ONLY)
 5. Enjoy
 
 ## Why?
@@ -20,12 +20,12 @@ As such, *not* using a script or other program to make these changes necessitate
 
 ## How work?
 Upon first use this program makes its own config file to note down the file paths for the user's desired replacement fonts (iniEdit.ini).
-When Planetside 2 starts (after clicking play on the launcher), and because it uses BE, Windows' Event Log logs a service start/install (Event ID 7045) for BEDaisy.
+When Planetside 2 starts (after clicking play on the launcher), Windows' Event Log logs a service start/install (Event ID 7045) for BEDaisy. This is because the game uses BattlEye.
 Assuming the PC is not using a very slow, spinning-disk hard drive, there is enough time to catch this event and replace the normal font files before the game actually starts.
-After catching said event, this program does this copy/replace operation, then closes itself.
+After catching said event, this program does the copy/replace operations necessary, then closes itself.
 
 ## What files are replaced?
-The font files are located in `...\PlanetSide 2\UI\Resource\Fonts`
+The game's included font files are located in `...\PlanetSide 2\UI\Resource\Fonts`
 
 At least for the English version of the game as of Dec 2024, the replaced files are:
 
@@ -39,3 +39,9 @@ Many elements have fixed maximum sizes all text must fit in or else be cut off, 
 As such, particularly bold fonts, or fonts with wider spaces between characters, such as monospaced fonts, can lead to text being cut off.
 Do experiment with different fonts, there are literally tens of thousands of them.
 The font you originally wanted may not end up being your favorite.
+
+## Randomize Function
+Have too many fonts to choose from or want to see what kind of craziness you can create without planning?
+Check the randomize box and see what you get!
+Just give the program a folder with a bunch of fonts (the wackier the better) and click the ReRandomize button.
+Both your primary game font and the chatbox font will each randomly be assigned a font from your selected folder.
