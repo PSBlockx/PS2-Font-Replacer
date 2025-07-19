@@ -63,6 +63,17 @@ Public Class Form1
         If File.Exists(commandPath) Then
             commandTextBox.Lines = File.ReadAllLines(commandPath)
         End If
+        randomizeCheck.Checked = GetStateMyIni("FontRandomize=")
+        If randomizeCheck.Checked Then
+            rerandomizeButton.Visible = True
+            randomizeFolderButton.Visible = True
+            fontFolderPath.Visible = True
+        Else
+            rerandomizeButton.Visible = False
+            randomizeFolderButton.Visible = False
+            fontFolderPath.Visible = False
+        End If
+        fontFolderPath.Text = GetStateMyIni("FontRandomFolder=")
 #End Region
     End Function
 #Region "FontStuff"
@@ -96,6 +107,18 @@ Public Class Form1
             UpdateValMyIni("FontFilePath2=", fontPath)
         End If
     End Sub
+    Private Sub randomizeFolderButton_Click(sender As Object, e As EventArgs) Handles randomizeFolderButton.Click
+        Dim folderPath As String = Nothing
+        Dim folderDialog As New FolderBrowserDialog()
+
+        If folderDialog.ShowDialog() = DialogResult.OK Then
+            'Using a dialog, get the desired font file path
+            folderPath = folderDialog.SelectedPath.ToString
+            'Show user selected font path
+            fontFolderPath.Text() = folderPath
+            UpdateValMyIni("FontRandomFolder=", folderPath)
+        End If
+    End Sub
     Private Sub fontAutoCheck_CheckChanged(sender As Object, e As EventArgs) Handles fontAutoCheck.Click
         If fontAutoCheck.Checked Then
             UpdateValMyIni("FontAutoReplace=", True)
@@ -118,6 +141,35 @@ Public Class Form1
             fontSelectButton2.Visible = False
         End If
     End Sub
+    Private Sub randomizeCheck_CheckedChanged(sender As Object, e As EventArgs) Handles randomizeCheck.CheckedChanged
+        If randomizeCheck.Checked Then
+            UpdateValMyIni("FontRandomize=", True)
+            rerandomizeButton.Visible = True
+            randomizeFolderButton.Visible = True
+            fontFolderPath.Visible = True
+        Else
+            UpdateValMyIni("FontRandomize=", False)
+            rerandomizeButton.Visible = False
+            randomizeFolderButton.Visible = False
+            fontFolderPath.Visible = False
+        End If
+    End Sub
+    Private Sub rerandomizeButton_Click(sender As Object, e As EventArgs) Handles rerandomizeButton.Click
+        Dim fontList As Array = IO.Directory.GetFiles(fontFolderPath.Text, "*.ttf", 0)
+        If fontAutoCheck.Checked Then
+            Dim Rand As New Random()
+            Dim chosenFont As String = fontList(Rand.Next(0, fontList.Length - 1))
+            UpdateValMyIni("FontFilePath=", chosenFont)
+            selectedFontPath.Text = chosenFont
+        End If
+        If fontAutoCheck2.Checked Then
+            Dim Rand As New Random()
+            Dim chosenFont As String = fontList(Rand.Next(0, fontList.Length - 1))
+            UpdateValMyIni("FontFilePath2=", chosenFont)
+            selectedFontPath2.Text = chosenFont
+        End If
+    End Sub
+
     Public Sub BackgroundWorker1_DoWork(sender As Object, e As DoWorkEventArgs) Handles BackgroundWorker1.DoWork
         Dim watcher As EventLogWatcher
         watcher = Nothing

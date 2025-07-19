@@ -47,6 +47,11 @@ Partial Class Form1
         Me.FlowLayoutPanel4 = New System.Windows.Forms.FlowLayoutPanel()
         Me.commandAutoCheck = New System.Windows.Forms.CheckBox()
         Me.commandTextBox = New System.Windows.Forms.TextBox()
+        Me.FlowLayoutPanel7 = New System.Windows.Forms.FlowLayoutPanel()
+        Me.randomizeCheck = New System.Windows.Forms.CheckBox()
+        Me.randomizeFolderButton = New System.Windows.Forms.Button()
+        Me.fontFolderPath = New System.Windows.Forms.Label()
+        Me.rerandomizeButton = New System.Windows.Forms.Button()
         Me.StatusStrip1.SuspendLayout()
         Me.FlowLayoutPanel1.SuspendLayout()
         Me.FlowLayoutPanel2.SuspendLayout()
@@ -54,6 +59,7 @@ Partial Class Form1
         Me.FlowLayoutPanel5.SuspendLayout()
         Me.FlowLayoutPanel3.SuspendLayout()
         Me.FlowLayoutPanel4.SuspendLayout()
+        Me.FlowLayoutPanel7.SuspendLayout()
         Me.SuspendLayout()
         '
         'ToolStripStatusLabel1
@@ -121,10 +127,11 @@ Partial Class Form1
         Me.FlowLayoutPanel2.BackColor = System.Drawing.SystemColors.ControlDarkDark
         Me.FlowLayoutPanel2.Controls.Add(Me.FlowLayoutPanel6)
         Me.FlowLayoutPanel2.Controls.Add(Me.FlowLayoutPanel5)
+        Me.FlowLayoutPanel2.Controls.Add(Me.FlowLayoutPanel7)
         Me.FlowLayoutPanel2.FlowDirection = System.Windows.Forms.FlowDirection.TopDown
         Me.FlowLayoutPanel2.Location = New System.Drawing.Point(3, 3)
         Me.FlowLayoutPanel2.Name = "FlowLayoutPanel2"
-        Me.FlowLayoutPanel2.Size = New System.Drawing.Size(127, 150)
+        Me.FlowLayoutPanel2.Size = New System.Drawing.Size(127, 254)
         Me.FlowLayoutPanel2.TabIndex = 74
         '
         'FlowLayoutPanel6
@@ -232,7 +239,7 @@ Partial Class Form1
         Me.FlowLayoutPanel3.Controls.Add(Me.localeDatButton)
         Me.FlowLayoutPanel3.Controls.Add(Me.selectedDatPath)
         Me.FlowLayoutPanel3.FlowDirection = System.Windows.Forms.FlowDirection.TopDown
-        Me.FlowLayoutPanel3.Location = New System.Drawing.Point(3, 159)
+        Me.FlowLayoutPanel3.Location = New System.Drawing.Point(3, 263)
         Me.FlowLayoutPanel3.Name = "FlowLayoutPanel3"
         Me.FlowLayoutPanel3.Size = New System.Drawing.Size(172, 115)
         Me.FlowLayoutPanel3.TabIndex = 75
@@ -301,7 +308,7 @@ Partial Class Form1
         Me.FlowLayoutPanel4.Controls.Add(Me.commandAutoCheck)
         Me.FlowLayoutPanel4.Controls.Add(Me.commandTextBox)
         Me.FlowLayoutPanel4.FlowDirection = System.Windows.Forms.FlowDirection.TopDown
-        Me.FlowLayoutPanel4.Location = New System.Drawing.Point(3, 280)
+        Me.FlowLayoutPanel4.Location = New System.Drawing.Point(181, 3)
         Me.FlowLayoutPanel4.Name = "FlowLayoutPanel4"
         Me.FlowLayoutPanel4.Size = New System.Drawing.Size(250, 147)
         Me.FlowLayoutPanel4.TabIndex = 76
@@ -329,6 +336,65 @@ Partial Class Form1
         Me.commandTextBox.Size = New System.Drawing.Size(244, 118)
         Me.commandTextBox.TabIndex = 10
         Me.commandTextBox.Visible = False
+        '
+        'FlowLayoutPanel7
+        '
+        Me.FlowLayoutPanel7.AutoSize = True
+        Me.FlowLayoutPanel7.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.FlowLayoutPanel7.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.FlowLayoutPanel7.Controls.Add(Me.randomizeCheck)
+        Me.FlowLayoutPanel7.Controls.Add(Me.randomizeFolderButton)
+        Me.FlowLayoutPanel7.Controls.Add(Me.fontFolderPath)
+        Me.FlowLayoutPanel7.Controls.Add(Me.rerandomizeButton)
+        Me.FlowLayoutPanel7.FlowDirection = System.Windows.Forms.FlowDirection.TopDown
+        Me.FlowLayoutPanel7.Location = New System.Drawing.Point(3, 153)
+        Me.FlowLayoutPanel7.Name = "FlowLayoutPanel7"
+        Me.FlowLayoutPanel7.Size = New System.Drawing.Size(90, 98)
+        Me.FlowLayoutPanel7.TabIndex = 78
+        '
+        'randomizeCheck
+        '
+        Me.randomizeCheck.AutoSize = True
+        Me.randomizeCheck.ForeColor = System.Drawing.SystemColors.Control
+        Me.randomizeCheck.Location = New System.Drawing.Point(3, 3)
+        Me.randomizeCheck.Name = "randomizeCheck"
+        Me.randomizeCheck.Size = New System.Drawing.Size(79, 17)
+        Me.randomizeCheck.TabIndex = 4
+        Me.randomizeCheck.Text = "Randomize"
+        Me.randomizeCheck.UseVisualStyleBackColor = True
+        '
+        'randomizeFolderButton
+        '
+        Me.randomizeFolderButton.Location = New System.Drawing.Point(3, 26)
+        Me.randomizeFolderButton.Name = "randomizeFolderButton"
+        Me.randomizeFolderButton.Size = New System.Drawing.Size(75, 23)
+        Me.randomizeFolderButton.TabIndex = 5
+        Me.randomizeFolderButton.Text = "Fonts Folder"
+        Me.randomizeFolderButton.UseVisualStyleBackColor = True
+        Me.randomizeFolderButton.Visible = False
+        '
+        'fontFolderPath
+        '
+        Me.fontFolderPath.AutoSize = True
+        Me.fontFolderPath.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.fontFolderPath.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.fontFolderPath.ForeColor = System.Drawing.SystemColors.Control
+        Me.fontFolderPath.Location = New System.Drawing.Point(3, 52)
+        Me.fontFolderPath.Name = "fontFolderPath"
+        Me.fontFolderPath.Size = New System.Drawing.Size(0, 17)
+        Me.fontFolderPath.TabIndex = 72
+        Me.fontFolderPath.Visible = False
+        '
+        'rerandomizeButton
+        '
+        Me.rerandomizeButton.AutoSize = True
+        Me.rerandomizeButton.Location = New System.Drawing.Point(3, 72)
+        Me.rerandomizeButton.Name = "rerandomizeButton"
+        Me.rerandomizeButton.Size = New System.Drawing.Size(84, 23)
+        Me.rerandomizeButton.TabIndex = 73
+        Me.rerandomizeButton.Text = "ReRandomize"
+        Me.rerandomizeButton.UseVisualStyleBackColor = True
+        Me.rerandomizeButton.Visible = False
         '
         'Form1
         '
@@ -361,6 +427,8 @@ Partial Class Form1
         Me.FlowLayoutPanel3.PerformLayout()
         Me.FlowLayoutPanel4.ResumeLayout(False)
         Me.FlowLayoutPanel4.PerformLayout()
+        Me.FlowLayoutPanel7.ResumeLayout(False)
+        Me.FlowLayoutPanel7.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -390,4 +458,9 @@ Partial Class Form1
     Friend WithEvents ToolStripStatusLabel3 As ToolStripStatusLabel
     Friend WithEvents FlowLayoutPanel5 As FlowLayoutPanel
     Friend WithEvents FlowLayoutPanel6 As FlowLayoutPanel
+    Friend WithEvents FlowLayoutPanel7 As FlowLayoutPanel
+    Friend WithEvents randomizeCheck As CheckBox
+    Friend WithEvents randomizeFolderButton As Button
+    Friend WithEvents fontFolderPath As Label
+    Friend WithEvents rerandomizeButton As Button
 End Class

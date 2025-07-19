@@ -286,6 +286,8 @@
                                                  "LocaleDirPath=",
                                                  "LocaleDatPath=",
                                                  "CommandAutoReplace=",
-                                                 "DPI="})
+                                                 "DPI=",
+                                                 "FontRandomFolder=",
+                                                 "FontRandomize="})
     Public commandPath As String = "iniEditCommands.ini"
 End Module
